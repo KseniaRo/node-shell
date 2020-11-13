@@ -5,7 +5,10 @@ process.stdin.on("data", (data) => {
   if (cmd === "pwd") {
     process.stdout.write(getPwd);
     process.stdout.write("\nprompt > ");
-  } else {
+  }  else if (cmd === "ls") {
+    process.stdout.write(fs)
+  }
+ else {
     //   const cmd = data.toString().trim();
     process.stdout.write("you typed: " + cmd);
     process.stdout.write("\nprompt > ");
@@ -13,3 +16,5 @@ process.stdin.on("data", (data) => {
 });
 
 const getPwd = require("./pwd");
+const fs = require("./ls")
+
